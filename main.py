@@ -40,5 +40,10 @@ class ArtConverter:
 
 
 if __name__ == '__main__':
-    test = ArtConverter(sys.argv[1])
+    try:
+        test = ArtConverter(sys.argv[1])
+    except IndexError:
+        print("ERROR: path not found or not assigned. Please type path to the picture in argv")
+        sys.exit()
+
     test.compose_converted_image()
